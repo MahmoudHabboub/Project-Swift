@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         textField.leftViewMode = .always
     }
     
-    @IBAction func ShowDashboard(_ sender: Any)
+    @IBAction func showDashboard(_ sender: Any)
     {
         let str = TextField.text ?? ""
         if(str.count != 0)
@@ -131,39 +131,39 @@ extension CAGradientLayer {
         
         if ang < 0 { ang = 360 + ang }
         
-        let n: CGFloat = 0.5
+        let varN: CGFloat = 0.5
         
         switch ang {
             
         case 0...45, 315...360:
-            let a = CGPoint(x: 0, y: n * tanx(ang) + n)
-            let b = CGPoint(x: 1, y: n * tanx(-ang) + n)
-            startPoint = a
-            endPoint = b
+            let varA = CGPoint(x: 0, y: varN * tanx(ang) + varN)
+            let varB = CGPoint(x: 1, y: varN * tanx(-ang) + varN)
+            startPoint = varA
+            endPoint = varB
             
         case 45...135:
-            let a = CGPoint(x: n * tanx(ang - 90) + n, y: 1)
-            let b = CGPoint(x: n * tanx(-ang - 90) + n, y: 0)
-            startPoint = a
-            endPoint = b
+            let varA = CGPoint(x: varN * tanx(ang - 90) + varN, y: 1)
+            let varB = CGPoint(x: varN * tanx(-ang - 90) + varN, y: 0)
+            startPoint = varA
+            endPoint = varB
             
         case 135...225:
-            let a = CGPoint(x: 1, y: n * tanx(-ang) + n)
-            let b = CGPoint(x: 0, y: n * tanx(ang) + n)
-            startPoint = a
-            endPoint = b
+            let varA = CGPoint(x: 1, y: varN * tanx(-ang) + varN)
+            let varB = CGPoint(x: 0, y: varN * tanx(ang) + varN)
+            startPoint = varA
+            endPoint = varB
             
         case 225...315:
-            let a = CGPoint(x: n * tanx(-ang - 90) + n, y: 0)
-            let b = CGPoint(x: n * tanx(ang - 90) + n, y: 1)
-            startPoint = a
-            endPoint = b
+            let varA = CGPoint(x: varN * tanx(-ang - 90) + varN, y: 0)
+            let varB = CGPoint(x: varN * tanx(ang - 90) + varN, y: 1)
+            startPoint = varA
+            endPoint = varB
             
         default:
-            let a = CGPoint(x: 0, y: n)
-            let b = CGPoint(x: 1, y: n)
-            startPoint = a
-            endPoint = b
+            let varA = CGPoint(x: 0, y: varN)
+            let varB = CGPoint(x: 1, y: varN)
+            startPoint = varA
+            endPoint = varB
             
         }
     }
