@@ -9,63 +9,57 @@
 import UIKit
 
 class ViewController: UIViewController {
- @IBOutlet weak var On_Boarding: UIView!
- @IBOutlet weak var Main_View: UIView!
- @IBOutlet weak var CircleView_1: UIView!
- @IBOutlet weak var CircleView_2: UIView!
- @IBOutlet weak var CircleView_3: UIView!
- @IBOutlet var Button: UIButton!
- @IBOutlet weak var Label_91: UILabel!
- @IBOutlet weak var TextField: UITextField!
+ @IBOutlet weak var onBoarding: UIView!
+ @IBOutlet weak var mainView: UIView!
+ @IBOutlet weak var circleView1: UIView!
+ @IBOutlet weak var circleView2: UIView!
+ @IBOutlet weak var circleView3: UIView!
+ @IBOutlet var button: UIButton!
+ @IBOutlet weak var label91: UILabel!
+ @IBOutlet weak var textField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        let Color_One = UIColor(hexString:"#5927FF")!
-        let Color_Two = UIColor(hexString: "#8160EF")!
-        On_Boarding.applyGradient(colours: [Color_Two, Color_One])
-        Main_View.applyGradient(colours: [Color_Two, Color_One])
-        
+        let colorOne = UIColor(hexString:"#5927FF")!
+        let colorTwo = UIColor(hexString: "#8160EF")!
+        onBoarding.applyGradient(colours: [colorTwo, colorOne])
+        mainView.applyGradient(colours: [colorTwo, colorOne])
         //1
-        CircleView_1.layer.cornerRadius = CircleView_1.frame.size.width/2
-        CircleView_1.clipsToBounds = true
-        CircleView_1.layer.borderColor = UIColor.init(hexString:"#44E4A5")?.cgColor
-        CircleView_1.layer.borderWidth = 5.0
-        
+        circleView1.layer.cornerRadius = circleView1.frame.size.width/2
+        circleView1.clipsToBounds = true
+        circleView1.layer.borderColor = UIColor.init(hexString:"#44E4A5")?.cgColor
+        circleView1.layer.borderWidth = 5.0
         //2
-        CircleView_2.layer.cornerRadius = CircleView_2.frame.size.width/2
-        CircleView_2.clipsToBounds = true
-        CircleView_2.layer.borderColor = UIColor.init(hexString:"#44E4A5")?.cgColor
-        CircleView_2.layer.borderWidth = 5.0
-        
+        circleView2.layer.cornerRadius = circleView2.frame.size.width/2
+        circleView2.clipsToBounds = true
+        circleView2.layer.borderColor = UIColor.init(hexString:"#44E4A5")?.cgColor
+        circleView2.layer.borderWidth = 5.0
         //3
-        CircleView_3.layer.cornerRadius = CircleView_3.frame.size.width/2
-        CircleView_3.clipsToBounds = true
-        CircleView_3.layer.borderColor = UIColor.init(hexString:"#44E4A5")?.cgColor
-        CircleView_3.layer.borderWidth = 5.0
-        
+        circleView3.layer.cornerRadius = circleView3.frame.size.width/2
+        circleView3.clipsToBounds = true
+        circleView3.layer.borderColor = UIColor.init(hexString:"#44E4A5")?.cgColor
+        circleView3.layer.borderWidth = 5.0
         //
-        Button.setImage(UIImage(named: "OnBoardingButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        
+        button.setImage(UIImage(named: "OnBoardingButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
         //
-        let maskPath = UIBezierPath(roundedRect: Label_91.bounds,
+        let maskPath = UIBezierPath(roundedRect: label91.bounds,
                                     byRoundingCorners: [.bottomLeft, .topLeft],
                                     cornerRadii: CGSize(width: 10.0, height: 10.0))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
-        Label_91.layer.mask = shape
-        
+        label91.layer.mask = shape
         //
         let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        TextField.leftView = paddingView
-        TextField.leftViewMode = .always
-        
-        
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
     }
     
-    @IBAction func ShowDashboard(_ sender: Any){
+    @IBAction func ShowDashboard(_ sender: Any)
+    {
         let str = TextField.text ?? ""
-        if(str.count != 0){
+        if(str.count != 0)
+        {
             performSegue(withIdentifier: "ShowDashboard", sender: nil)
         }
     }
